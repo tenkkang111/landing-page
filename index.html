@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monster Energy | Unleash The Beast</title>
+    <meta name="description" content="몬스터 에너지 드링크 - 내면의 야성을 깨워라.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#" class="logo">MONSTER</a>
+        <div class="nav-links">
+            <a href="#home">홈페이지</a>
+            <a href="#products">제품</a>
+            <a href="#story">스토리</a>
+            <a href="#contact">문의</a>
+            <a href="index-en.html" class="lang-switch">EN</a>
+        </div>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>UNLEASH <br><span>THE BEAST</span></h1>
+            <p>강력한 에너지, 압도적인 맛. 몬스터 에너지와 함께 한계를 넘어 당신의 잠재력을 폭발시키세요.</p>
+            <a href="#products" class="btn">자세히 보기</a>
+        </div>
+        <div class="hero-image">
+            <img src="assets/monster.jpg" alt="Monster Energy Drink">
+        </div>
+    </section>
+
+    <section id="products" class="features">
+        <h2 class="section-title">WHY <span>MONSTER?</span></h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-bolt feature-icon"></i>
+                <h3>강력한 에너지 부스트</h3>
+                <p>타우린, 인삼, L-카르니틴의 완벽한 조화로 지치지 않는 에너지를 제공합니다.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-fire-flame-curved feature-icon"></i>
+                <h3>강렬하고 짜릿한 맛</h3>
+                <p>부드럽고 상쾌한 탄산과 거부할 수 없는 몬스터만의 특별한 풍미를 경험하세요.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-leaf feature-icon"></i>
+                <h3>슈거프리 옵션</h3>
+                <p>울트라 라인업을 통해 칼로리와 당류 걱정 없이 에너지를 충전할 수 있습니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <h2>MONSTER ENERGY</h2>
+            <p>© 2026 Monster Energy Company. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Hamburger Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const icon = hamburger.querySelector('i');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+    </script>
+</body>
+</html>
